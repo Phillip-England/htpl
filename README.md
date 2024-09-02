@@ -14,3 +14,6 @@ Click one element, and have it forward the click onto another element. I created
 <button ht-click-proxy='#hidden-input'>Click Me!</button>
 <input id='hidden-input' type='file' class='hidden' />
 ```
+
+### ht-mass-toggle
+`ht-mass-toggle="<event-type>:<selector> <another-selector>:<class to toggle> <another class to toggle>"
