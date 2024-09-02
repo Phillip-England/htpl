@@ -31,3 +31,8 @@ to get this result
  <h1 id="header" class="text-blue-700">Header</h1>
  <p id="text" class="text-blue-700">Some Text!</p>
 ```
+
+for clarity
+```bash
+eventType:#selector (or multiple selectors seperated by spaces):className anotherClassName (seperated by spaces)
+```
