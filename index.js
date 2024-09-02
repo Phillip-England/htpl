@@ -39,3 +39,19 @@ htpl.add("ht-click-proxy", (element, attr) => {
         target.click()
     })
 })
+
+htpl.add('ht-mass-toggle', (element, attr) => {
+    let parts = attr.split(":")
+    let eventType = parts[0]
+    let targets = parts[1].split(' ')
+    let classes = parts[2].split(' ')
+    element.addEventListener(eventType, () => {
+        for (let i = 0; i < targets.length; i++) {
+            let target = document.querySelector(targets[i])
+            for (let i2 = 0; i2 < classes.length; i2++) {
+                let cls = classes[i2]
+                target.classList.toggle(cls)
+            }
+        }
+    })
+})
