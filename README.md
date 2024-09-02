@@ -16,4 +16,18 @@ Click one element, and have it forward the click onto another element. I created
 ```
 
 ### ht-mass-toggle
-`ht-mass-toggle="<event-type>:<selector> <another-selector>:<class to toggle> <another class to toggle>"
+Attach any type of event to an element. Specify target elements. Then toggle a list of classes on those element when the event is fired.
+
+click the button here..
+```html
+ <button ht-mass-toggle="click:#header #text:hidden text-blue-700"></button>
+ <h1 id="header" class="hidden">Header</h1>
+ <p id="text" class="hidden">Some Text!</p>
+```
+
+to get this result...
+```html
+ <button ht-mass-toggle="click:#header #text:hidden text-blue-700"></button>
+ <h1 id="header" class="text-blue-700">Header</h1>
+ <p id="text" class="text-blue-700">Some Text!</p>
+```
