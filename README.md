@@ -34,5 +34,5 @@ to get this result
 
 for clarity
 ```bash
-eventType:#selector (or multiple selectors seperated by spaces):className anotherClassName (seperated by spaces)
+eventType:selector anotherSelector:className anotherClassName
 ```
