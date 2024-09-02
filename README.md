@@ -6,6 +6,7 @@ Two of my favorite tools revolve around HTML's attributes. Both Tailwind and HTM
 
 
 ## Attribute Listing
+All of the attributes for HTPL are listed here:
 
 ### ht-click-proxy
 Click one element, and have it forward the click onto another element. I created this to make it easy to hide a file input and click it using another, prettier, button.
