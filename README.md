@@ -8,14 +8,7 @@ Two of my favorite tools revolve around HTML's attributes. Both Tailwind and HTM
 ## Attribute Listing
 
 ### proxy-click
-
-#### Action
-click one element, and have it forward the click onto another element
-
-#### Use Case
-I created this to make it easy to hide a file input and click it using another, prettier, button.
-
-#### Example
+click one element, and have it forward the click onto another element. I created this to make it easy to hide a file input and click it using another, prettier, button.
 ```html
 <button proxy-click='#hidden-input'>Click Me!</button>
 <input id='hidden-input' type='file' class='hidden' />
