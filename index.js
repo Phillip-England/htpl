@@ -12,21 +12,28 @@ class Htpl {
     hook() {
         for (let i = 0; i < Object.keys(this.attributes).length; i++) {
             let key = Object.keys(this.attributes)[i]
-            let elements = document.querySelectorAll(`[${key}]`)
-            for (let i2 = 0; i2 < elements.length; i2++) {
-                let element = elements[i2]
-                let attr = element.getAttribute(key)
-                this.attributes[key](element, attr)
+            let allElements = document.querySelectorAll('*')
+            for (let i2 = 0; i2 < allElements.length; i2++) {
+                let element = allElements[i2]
+                let attributes = element.attributes
+                for (const attrKey in attributes) {
+                    let attr = attributes[attrKey].name
+                    if (typeof(attr) == 'string') {
+                        if (attr.startsWith(key)) {
+                            this.attributes[key](element, element.getAttribute(attr))
+                        }
+                    }
+                }
             }
         }
     }
-
-
 }
+
+
 
 const htpl = new Htpl()
 
-htpl.add("proxy-click", (element, attr) => {
+htpl.add("ht-click-proxy", (element, attr) => {
     let target = document.querySelector(attr)
     element.addEventListener('click', () => {
         target.click()
