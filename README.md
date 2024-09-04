@@ -32,7 +32,28 @@ to get this result
  <p id="text" class="text-blue-700">Some Text!</p>
 ```
 
-for clarity
-```bash
-eventType:selector anotherSelector:className anotherClassName
+
+### ht-multi-photo-form
+Take any form, and enable image preview/undo for multiple images of a selected width.
+
+take this form and photo photo container
+```html
+<form>
+    <button id='undo-button'>undo</button>
+    <input type='file' id='fileInput' />
+</form>
+<div id='photo-container'></div>
+```
+
+Then, to set things up, do
+```html
+<form ht-multi-photo-form='#file-input:#photo-container:#undo-button:200:flex border rounded'>
+    <button id='undo-button'>undo</button>
+    <input type='file' id='file-input' />
+</form>
+<div id='photo-container'></div>
+```
+
+```python
+ht-multi-photo-form='<file input selector>:<photo container selector>:<undo button selector>:<img width>:css classes which wrap the output images, seperated by spaces.'
 ```
