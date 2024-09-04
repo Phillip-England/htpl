@@ -139,6 +139,31 @@ htpl.add('ht-multi-photo-form', (element, attr) => {
 })
 
 
+htpl.add('ht-form-file-limit', (element, attr) => {
+
+    let parts = attr.split(':');
+    let input = document.querySelector(parts[0]);
+    let err = document.querySelector(parts[1]);
+    let maxSize = parseFloat(parts[2])
+
+    element.addEventListener('submit', (e) => {
+        let files = input.files;
+        let size = 0;
+        for (let i = 0; i < files.length; i++) {
+            let file = files[i];
+            size += file.size; 
+        }
+        let sizeInMB = size / (1024 * 1024); 
+        if (sizeInMB > maxSize) {
+            e.preventDefault(); 
+            err.textContent = `exceeded max upload size of ${maxSize} MB`;
+        } else {
+            err.textContent = ''; 
+        }
+    });
+});
+
+
 window.addEventListener('DOMContentLoaded', () => {
     htpl.hook()
 })

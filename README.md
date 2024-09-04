@@ -40,7 +40,7 @@ take this form and photo photo container
 ```html
 <form>
     <button id='undo-button'>undo</button>
-    <input type='file' id='fileInput' />
+    <input type='file' id='file-input' />
 </form>
 <div id='photo-container'></div>
 ```
@@ -57,4 +57,16 @@ Then, to set things up, do
 For clarity on attribute syntax
 ```python
 ht-multi-photo-form='<file input selector>:<photo container selector>:<undo button selector>:<img width>:<css classes which wrap the output images, seperated by spaces>'
+```
+
+### ht-form-file-limit
+Take a form, and limit how large a file inputs files can be. If we are over the limit on submission, specify so in an error element
+
+take this form, which will limit the submission to 10 MB
+```html
+<form ht-form-file-limit='#file-input:#form-err:10'>
+    <input type='file' id='file-input' />
+    <p id='form-err' class=''></p>
+    <input type='submit'>
+</form>
 ```
