@@ -54,6 +54,7 @@ Then, to set things up, do
 <div id='photo-container'></div>
 ```
 
+For clarity on attribute syntax
 ```python
 ht-multi-photo-form='<file input selector>:<photo container selector>:<undo button selector>:<img width>:css classes which wrap the output images, seperated by spaces.'
 ```
