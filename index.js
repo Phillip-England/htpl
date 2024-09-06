@@ -44,6 +44,7 @@ htpl.add("ht-click-proxy", (element, attr) => {
 })
 
 htpl.add('ht-mass-toggle', (element, attr) => {
+    console.log(element)
     let parts = attr.split(":")
     let eventType = parts[0]
     let targets = parts[1].split(' ')

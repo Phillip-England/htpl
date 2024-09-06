@@ -83,3 +83,18 @@ Make an element match the height of another element
     <input type='text' name='username' />
 </form>
 ```
+
+### ht-height-diff
+Make an elements height equal to the difference of two *other* elements heights.
+
+The following `<ul>` will be equal to the height of `<body>` minus the height of `#nav-buffer`
+```html
+<nav>
+    <div id='nav-buffer'></div>
+    <ul ht-height-diff='body:#nav-buffer'>
+        <li>
+            <a>Home</a>
+        </li>
+    </ul>
+</nav>
+```
