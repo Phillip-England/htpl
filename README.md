@@ -76,7 +76,7 @@ Make an element match the height of another element
 
 ```html
 <div ht-match-height='#login-form'>
-    <p>I need to be the same size as the form!</p>
+    <p>I need to be the same height as the form!</p>
 </div>
 <form id='login-form'>
     <label>username</label>
