@@ -70,3 +70,16 @@ take this form, which will limit the submission to 10 MB
     <input type='submit'>
 </form>
 ```
+
+### ht-match-height
+Make an element match the height of another element
+
+```html
+<div ht-match-height='#login-form'>
+    <p>I need to be the same size as the form!</p>
+</div>
+<form id='login-form'>
+    <label>username</label>
+    <input type='text' name='username' />
+</form>
+```

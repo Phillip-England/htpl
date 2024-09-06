@@ -163,6 +163,10 @@ htpl.add('ht-form-file-limit', (element, attr) => {
     });
 });
 
+htpl.add('ht-match-height', (element, attr) => {
+    let targetElement = document.querySelector(attr)
+    element.style.height = targetElement.offsetHeight
+})
 
 window.addEventListener('DOMContentLoaded', () => {
     htpl.hook()
