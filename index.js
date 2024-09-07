@@ -36,14 +36,14 @@ class Htpl {
 
 const htpl = new Htpl()
 
-htpl.add("ht-click-proxy", (element, attr) => {
+htpl.add("_click-proxy", (element, attr) => {
     let target = document.querySelector(attr)
     element.addEventListener('click', () => {
         target.click()
     })
 })
 
-htpl.add('ht-mass-toggle', (element, attr) => {
+htpl.add('_mass-toggle', (element, attr) => {
     let parts = attr.split(":")
     let eventType = parts[0]
     let targets = parts[1].split(' ')
@@ -59,7 +59,7 @@ htpl.add('ht-mass-toggle', (element, attr) => {
     })
 })
 
-htpl.add('ht-multi-photo-form', (element, attr) => {
+htpl.add('_multi-photo-form', (element, attr) => {
 
     // extracting attr data
     let parts = attr.split(':')
@@ -139,7 +139,7 @@ htpl.add('ht-multi-photo-form', (element, attr) => {
 })
 
 
-htpl.add('ht-form-file-limit', (element, attr) => {
+htpl.add('_form-file-limit', (element, attr) => {
 
     let parts = attr.split(':');
     let input = document.querySelector(parts[0]);
@@ -163,18 +163,28 @@ htpl.add('ht-form-file-limit', (element, attr) => {
     });
 });
 
-htpl.add('ht-match-height', (element, attr) => {
+htpl.add('_match-height', (element, attr) => {
     let targetElement = document.querySelector(attr)
     element.style.height = targetElement.offsetHeight
 })
 
 
-htpl.add('ht-height-diff', (element, attr) => {
+htpl.add('_height-diff', (element, attr) => {
     let parts = attr.split(':')
     let e1 = document.querySelector(parts[0])
     let e2 = document.querySelector(parts[1])
     let newHeight = e1.offsetHeight - e2.offsetHeight
     element.style.height = newHeight
+})
+
+htpl.add('_active-link', (element, attr) => {
+    if (element.getAttribute('href') == window.location.pathname) {
+        let parts = attr.split(' ')
+        for (let i = 0; i < parts.length; i++) {
+            let className = parts[i]
+            element.classList.add(className)
+        }
+    }
 })
 
 window.addEventListener('DOMContentLoaded', () => {
