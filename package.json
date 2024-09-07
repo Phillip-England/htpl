@@ -1,6 +1,8 @@
 {
   "name": "htpl",
   "module": "index.js",
+  "author": "Phillip England",
+  "version": "0.0.1",
   "type": "module",
   "devDependencies": {
     "@types/bun": "latest"
